@@ -1,0 +1,34 @@
+.cardBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 2px solid #60a85f;
+    box-shadow: 0 2px 3px 1px #88e23b;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgba(58, 58, 58, 0.5);
+    color: #60a85f;
+    cursor: pointer;
+}
+
+.cardBlock:hover {
+    scale: 1.01;
+    background-color: rgba(69, 69, 69, 0.5);
+    transition: all ease 0.2s;
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.image {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+}
