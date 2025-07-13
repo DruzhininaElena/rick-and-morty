@@ -3,16 +3,15 @@ import type {CharacterType} from '@/features/characters/api/charactersApi.types.
 
 type Props = {
     character: CharacterType
-    onImageLoad?: () => void
 };
-export const CharacterCard = ({character, onImageLoad}: Props) => {
+export const CharacterCard = ({character}: Props) => {
 
     const {name, image} = character
 
     return (
         <div className={s.cardBlock}>
             <h3 className={s.name}>{name}</h3>
-            <img className={s.image} src={image} alt={`image of ${name}`} onLoad={onImageLoad}/>
+            <img className={s.image} src={image} alt={`image of ${name}`}/>
         </div>
     );
 };

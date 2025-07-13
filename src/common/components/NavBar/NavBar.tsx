@@ -13,7 +13,7 @@ export const NavBar = () => {
                     <Link to={Path.Planets}>Planets</Link>
                 </li>
                 <li>
-                    <Link to={Path.Locations}>Locations</Link>
+                    <Link to={Path.Episodes}>Episodes</Link>
                 </li>
             </ul>
         </nav>

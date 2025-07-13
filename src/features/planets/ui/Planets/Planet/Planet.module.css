@@ -1,0 +1,26 @@
+.planetWrapper {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.image {
+    /*width: 200px;*/
+    /*height: 200px;*/
+    overflow: hidden;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.key {
+    text-decoration: underline;
+    color: #60a85f
+}
+
+.value {
+
+}

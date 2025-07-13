@@ -1,0 +1,45 @@
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "p40 p28 p28 p47 p35 p78"
+    "p9 p28 p28 p1 p35 p94"
+    "p9 p79 p79 p13 p13 p37"
+    "p4 p43 p43 p48 p57 p57";
+}
+
+.item {
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.item:hover {
+    transform: scale(1.02);
+    transition: all ease 0.2s;
+}
+
+.planetName {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #88e23b;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    transform: translateY(75%);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.item:hover .planetName {
+    transform: translateY(50%);
+    opacity: 1;
+}
+
+

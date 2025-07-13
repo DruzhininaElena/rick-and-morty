@@ -4,6 +4,8 @@
 body {
     background-image: url("../assets/images/background-planets.jpg");
     background-size: contain;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 *, *:before, *:after {

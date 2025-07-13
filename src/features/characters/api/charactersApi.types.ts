@@ -13,11 +13,21 @@ export type CharacterType = {
     created: string;
 };
 
-export type CharacterStatusType = "Alive" | "Dead" | "unknown";
+export type CharacterStatusType = 'Alive' | 'Dead' | 'unknown';
 
-type CharacterGenderType = "Female" | "Male" | "Genderless" | "unknown";
+type CharacterGenderType = 'Female' | 'Male' | 'Genderless' | 'unknown';
+
+type CharacterSpeciesType = 'Human' | 'Alien' | 'Humanoid' | 'Poopybutthole' | 'Mythological' | 'Unknown' | 'Animal'
+    | 'Disease' | 'Robot' | 'Cronenberg' | 'Planet';
 
 type ExtraDataType = {
     name: string;
     url: string;
 };
+
+export type ParamsType = {
+    name?: string
+    status?: CharacterStatusType
+    gender?: CharacterGenderType
+    species?: CharacterSpeciesType
+}

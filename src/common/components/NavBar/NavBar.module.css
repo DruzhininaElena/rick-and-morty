@@ -2,8 +2,9 @@
     display: flex;
     list-style: none;
     gap: 42px;
-    font-size: 24px;
-    color: #88e23b
+    font-size: 30px;
+    color: #60a85f;
+    text-shadow: 1px 1px 2px #88e23b;
 }
 
 .list li a {
