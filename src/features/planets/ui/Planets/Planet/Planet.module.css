@@ -7,9 +7,10 @@
 }
 
 .image {
-    /*width: 200px;*/
-    /*height: 200px;*/
     overflow: hidden;
+    height: 250px;
+    width: 250px;
+
 }
 
 .description {

@@ -11,3 +11,17 @@
     text-decoration: none;
     color: inherit;
 }
+
+@media (max-width: 768px) {
+    .list {
+        font-size: 24px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 599px) {
+    .list {
+        font-size: 14px;
+        gap: 16px;
+    }
+}

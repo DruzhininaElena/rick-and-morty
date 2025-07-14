@@ -1,8 +1,9 @@
 import {useParams} from 'react-router';
 import {useGetPlanetByIdQuery} from '@/features/planets/api/planetsApi.ts';
 import s from './Planet.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+
+import {useGetMultipleCharactersQuery} from '@/features/characters/api/charactersApi.ts';
+import {Residents} from '@/features/planets/ui/Planets/Planet/Residents/Residents.tsx';
 
 export const Planet = () => {
 
@@ -10,12 +11,21 @@ export const Planet = () => {
 
     const {data: planet, isLoading} = useGetPlanetByIdQuery(params.id!, {skip: !params.id})
 
+    const residentsIds = planet?.residents.map(url => {
+        const parts = url.split('/');
+        return parseInt(parts[parts.length - 1]);
+    }) || []
+
+    const { data: residents, isLoading: isResidentsLoading } = useGetMultipleCharactersQuery(
+        residentsIds,
+        { skip: residentsIds.length === 0 }
+    );
 
     if (!params.id) {
         return <div>Error: ID not found</div>;
     }
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading || isResidentsLoading) return <div>Loading...</div>
 
     return (
         <>
@@ -28,15 +38,7 @@ export const Planet = () => {
                     <span className={s.value}>{planet?.dimension}</span>
                 </div>
             </div>
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={2}
-            >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-            </Swiper>
+            <Residents residents={residents || []}/>
         </>
     );
 };

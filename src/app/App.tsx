@@ -13,7 +13,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <Header/>
-            <Container maxWidth={'xl'}>
+            <Container maxWidth={'lg'}>
                 <Routing/>
             </Container>
             <ErrorSnackbar/>

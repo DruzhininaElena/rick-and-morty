@@ -15,8 +15,11 @@ export const charactersApi = baseApi.injectEndpoints({
                 url: '/character',
                 params
             })
-        })
+        }),
+        getMultipleCharacters: builder.query<CharacterType[], number[]>({
+            query: (ids) => `/character/${ids}`
+        }),
     })
 })
 
-export const {useGetAllCharactersQuery, useLazyGetFilteredCharactersQuery} = charactersApi
+export const {useGetAllCharactersQuery, useLazyGetFilteredCharactersQuery, useGetMultipleCharactersQuery} = charactersApi

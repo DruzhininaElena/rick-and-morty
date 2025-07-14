@@ -12,9 +12,6 @@ export const NavBar = () => {
                 <li>
                     <Link to={Path.Planets}>Planets</Link>
                 </li>
-                <li>
-                    <Link to={Path.Episodes}>Episodes</Link>
-                </li>
             </ul>
         </nav>
     );

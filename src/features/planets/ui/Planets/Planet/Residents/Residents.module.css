@@ -1,0 +1,16 @@
+.wrapper {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.slider {
+    position: relative;
+    margin: 0 50px;
+}
+
+@media (max-width: 599px) {
+    .slider {
+        margin: 0
+    }
+}
+

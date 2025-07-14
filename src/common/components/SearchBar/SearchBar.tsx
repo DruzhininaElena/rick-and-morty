@@ -35,7 +35,7 @@ export const SearchBar = ({ showSearchResult }: Props) => {
     return (
         <Paper
             component="form"
-            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, position: 'relative' }}
+            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', maxWidth: 400, position: 'relative' }}
         >
             <InputBase
                 value={searchQuery}
@@ -43,7 +43,7 @@ export const SearchBar = ({ showSearchResult }: Props) => {
                 onKeyDown={handleKeyDown}
                 placeholder="Search by name"
                 inputProps={{ 'aria-label': 'Search by name' }}
-                sx={{ ml: 1, flex: 1, width: '500px', color: '#88e23b' }}
+                sx={{ ml: 1, flex: 1, maxWidth: '500px', color: '#88e23b' }}
             />
 
             {error && (

@@ -1,0 +1,16 @@
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    object-fit: contain;
+    height: 50px;
+}
+
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px
+}

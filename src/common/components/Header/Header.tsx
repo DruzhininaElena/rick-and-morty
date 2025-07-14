@@ -17,7 +17,7 @@ export const Header = () => {
             <Toolbar>
                 <Container maxWidth={'lg'} sx={containerSx}>
                     <Link to={Path.Characters}>
-                        <img className={s.image} src={logo} alt="logo"/>
+                        <img className={s.logo} src={logo} alt="logo"/>
                     </Link>
                     <NavBar/>
                 </Container>

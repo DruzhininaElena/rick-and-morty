@@ -8,8 +8,8 @@ export const CharacterSkeleton = () => {
             <Skeleton className={styles.name} width={150} height={50}/>
             <Skeleton
                 className={styles.image}
-                width={250}
-                height={250}
+                width={200}
+                height={200}
                 sx={{
                     transform: 'none',
                     margin: 0,

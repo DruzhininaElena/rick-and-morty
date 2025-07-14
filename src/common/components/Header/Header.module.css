@@ -1,4 +1,16 @@
-.image {
+.logo {
     object-fit: contain;
-    height: 100px;
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 599px) {
+    .logo {
+        width: 100px;
+    }
 }
