@@ -1,20 +1,21 @@
 .container {
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-    "p40 p28 p28 p47 p35 p78"
-    "p9 p28 p28 p1 p35 p94"
-    "p9 p79 p79 p13 p13 p37"
-    "p4 p43 p43 p48 p57 p57";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .item {
-    justify-self: center;
-    align-self: center;
     cursor: pointer;
     position: relative;
+}
+
+.item:nth-child(odd) {
+    align-self: start;
+}
+
+.item:nth-child(even) {
+    align-self: end;
 }
 
 .item:hover {
@@ -40,6 +41,17 @@
 .item:hover .planetName {
     transform: translateY(50%);
     opacity: 1;
+}
+
+@media (max-width: 599px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .planetName {
+        transform: translateY(50%);
+        opacity: 1;
+    }
 }
 
 

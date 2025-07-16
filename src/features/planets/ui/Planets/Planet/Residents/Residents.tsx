@@ -8,7 +8,6 @@ import {useRef} from 'react';
 import {
     NavigationButtons
 } from '@/features/planets/ui/Planets/Planet/Residents/navigationButtons/NavigationButtons.tsx';
-import {useBreakpoints} from '@/common/hooks/useBreakpoints.ts';
 
 type Props = {
     residents: CharacterType[]
@@ -16,8 +15,6 @@ type Props = {
 export const Residents = ({residents}: Props) => {
 
     const swiperRef = useRef<SwiperType | null>(null);
-
-    const isMobile = useBreakpoints()
 
     return (
         <div className={s.wrapper}>
@@ -46,7 +43,7 @@ export const Residents = ({residents}: Props) => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                {!isMobile && <NavigationButtons swiper={swiperRef}/>}
+                <NavigationButtons swiper={swiperRef}/>
             </div>
         </div>
     );

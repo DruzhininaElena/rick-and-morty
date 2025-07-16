@@ -14,7 +14,7 @@ export const Planets = () => {
     return (
         <div className={s.container}>
             {data?.map((planet) => (
-                <Link key={planet.id} style={{gridArea: `p${planet.id}`}} className={s.item} to={`${Path.Planets}/${planet.id}`}>
+                <Link key={planet.id} className={s.item} to={`${Path.Planets}/${planet.id}`}>
                     <img src={planet.imgUrl} alt={planet.name} className={s.image}/>
                     <div className={s.planetName}>
                         {planet.name}

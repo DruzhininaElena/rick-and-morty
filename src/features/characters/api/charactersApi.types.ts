@@ -26,6 +26,7 @@ type ExtraDataType = {
 };
 
 export type ParamsType = {
+    page?: number
     name?: string
     status?: CharacterStatusType
     gender?: CharacterGenderType

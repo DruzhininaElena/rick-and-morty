@@ -1,22 +1,30 @@
 import { Box, IconButton, InputBase, Paper } from '@mui/material';
 import { SearchIcon } from '@/assets/icons/SearchIcon.tsx';
-import { type ChangeEvent, useState, type KeyboardEvent } from 'react';
+import {type ChangeEvent, useState, type KeyboardEvent, useEffect} from 'react';
+import {useSearchParams} from 'react-router';
 
 type Props = {
-    showSearchResult: (searchQuery: string) => void;
+    showSearchResult: (searchValue: string) => void;
+    initialValue?: string;
 };
 
-export const SearchBar = ({ showSearchResult }: Props) => {
-    const [searchQuery, setSearchQuery] = useState('');
+export const SearchBar = ({ showSearchResult, initialValue = '' }: Props) => {
+    const [searchQuery, setSearchQuery] = useState(initialValue);
     const [error, setError] = useState<string | null>(null);
+    const [searchParams] = useSearchParams();
+
+    useEffect(() => {
+        if (!searchParams.get('search')) {
+            setSearchQuery('')
+        }
+    }, [searchParams]);
 
     const handleSearch = () => {
         const trimmedQuery = searchQuery.trim();
         if (trimmedQuery.length >= 3) {
-            setSearchQuery('');
             showSearchResult(trimmedQuery);
         } else {
-            setError('Введите минимум 3 символа');
+            setError('Enter min 3 symbols');
         }
     };
 
@@ -35,7 +43,7 @@ export const SearchBar = ({ showSearchResult }: Props) => {
     return (
         <Paper
             component="form"
-            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', maxWidth: 400, position: 'relative' }}
+            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', position: 'relative' }}
         >
             <InputBase
                 value={searchQuery}
@@ -43,7 +51,7 @@ export const SearchBar = ({ showSearchResult }: Props) => {
                 onKeyDown={handleKeyDown}
                 placeholder="Search by name"
                 inputProps={{ 'aria-label': 'Search by name' }}
-                sx={{ ml: 1, flex: 1, maxWidth: '500px', color: '#88e23b' }}
+                sx={{ ml: 1, flex: 1, color: '#88e23b' }}
             />
 
             {error && (
